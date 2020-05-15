@@ -27,17 +27,29 @@ block_size: size of the block to be distorted.
 alpha: the intensity of distortion.
 ```
 
-
-
-Here we provide a simple example to illustrate how to implement disout in neural networks. Take ResNet-56  on CIFAR-10 as an example:
+Here we provide a simple example to illustrate how to implement disout in neural networks. For example, you can run the following code to train a ResNet-56 on CIFAR-10 dataset.
 
 ```python
-python train.py
+python train.py --dist_prob 0.09 --alpha 5.0 --block_size 6
 ```
 
-## Result
+For ResNet-50 on ImageNet, you can run
 
-You should get about 94.50% accuracy on CIFAR-10 dataset when using the default parameter.
+```python
+python train_imagenet.py --dist_prob 0.07 --alpha 1.0 --block_size 7
+```
+
+## Results
+
+<p align="center">
+<img src="images/result.png" width="800">
+</p>
+
+<p align="center">
+<img src="images/result2.png" width="800">
+</p>
+
+You should achieve about 94.50% accuracy on CIFAR-10, and 78.76% top-1 accuracy on ImageNet with the default setting.
 
 ## Citation
 

@@ -67,6 +67,7 @@ class Disout(nn.Module):
                 percent_ones = block_pattern.sum() / float(block_pattern.numel())
 
 
+ 
                 if not (self.weight_behind is None) and not(len(self.weight_behind)==0):
                     wtsize=self.weight_behind.size(3)
                     weight_max=self.weight_behind.max(dim=0,keepdim=True)[0]
